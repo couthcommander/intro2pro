@@ -1,0 +1,416 @@
+---
+title: "Intro to<br/>~~Programming~~<br/>Baking"
+format: revealjs
+---
+
+## What is this?
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- butter
+- white sugar
+- brown sugar
+- vanilla extract
+- eggs
+:::
+
+::: {.column width="50%"}
+- flour
+- baking soda
+- baking powder
+- sea salt
+- chocolate chips
+:::
+
+::::
+
+A delicious allegory or an overdone metaphor?
+
+## What is required to bake cookies?
+
+. . .
+
+### A recipe
+
+- Ingredients
+- Equipment
+- Technique
+
+These should be well-defined
+
+## Create and order the steps
+
+1. Gather ingredients
+1. Measure ingredients
+1. Mix ingredients in bowl
+1. Place dough on sheet
+1. Bake dough
+
+## Step 2: Measure ingredients
+
+:::: {.columns}
+
+::: {.column width="50%"}
+With [cup], measure:
+
+- [1] butter
+- [1] white sugar
+- [1] brown sugar
+- [3] flour
+- [2] chocolate chips
+:::
+
+::: {.column width="50%"}
+With [teaspoon], measure:
+
+- [2] vanilla extract
+- [1] baking soda
+- [0.5] baking powder
+- [1] sea salt
+:::
+
+::::
+
+Take:
+
+- [2] eggs
+
+## Step 3: Mix ingredients
+
+In bowl [1]:
+
+1. add [flour]
+1. add [baking soda]
+1. add [baking powder]
+1. add [sea salt]
+1. mix
+
+## Step 3: Mix ingredients (cont)
+
+In bowl [2]:
+
+:::: {.columns}
+
+::: {.column width="50%"}
+1. add [butter]
+1. add [white sugar]
+1. add [brown sugar]
+1. mix (cream)
+1. add [eggs]
+1. add [vanilla]
+1. mix (beat)
+:::
+
+::: {.column width="50%"}
+8. add bowl [1]
+9. mix
+10. add [chocolate chips]
+11. mix
+:::
+
+::::
+
+## Step 4: Place dough on sheet
+
+1. roll dough from bowl [1] into ball
+1. place on cookie sheet [1]
+1. repeat as space allows
+
+## Step 5: Bake dough
+
+1. preheat oven [1] at [375° F]
+1. place cookie sheet [1] in oven [1]
+1. wait [8] minutes
+1. remove if cookies are [lightly browned]
+
+## Things to consider
+
+- What if we want to double the amount of cookies? Would it be easy to update the recipe?
+- We might substitute ingredients
+- During the steps, I used brackets to note items or amounts that might commonly change
+
+## Tie it back to programming
+
+A recipe is an algorithm made of pseudocode
+
+We use syntax to translate pseudocode into [R code]
+
+The compiler translates [R code] into machine code
+
+### Mapping concepts
+
+Ingredients == variables
+
+Verbs == functions
+
+Containers == data structures
+
+Repeat/if == control structures
+
+## Variables
+
+A variable holds stored data
+
+It will have a data type
+
+Two common data types are numbers and strings. In R these are called "numeric" and "character".
+
+## Data structures
+
+A data structure is a collection of variables
+
+The simplest data structure in R is a vector
+
+[1, 2, 3, 4, 5] is a vector with five numeric elements
+
+## Functions
+
+Functions allow us to repeat common tasks
+
+They usually have input, called arguments
+
+## Control structures
+
+Control structures allow code chunks to run conditionally
+
+- if condition exists
+- repeat until condition exists
+
+## Practice example with R vector {.smaller}
+
+This creates the variable "x", which is a numeric vector of length 1
+
+```{r echo=TRUE}
+x <- 1
+x = 1
+1 -> x
+```
+
+This creates the variable "y", which is a numeric vector of length 5
+
+```{r echo=TRUE}
+y <- c(1, 2, 3, 4, 5)
+y <- 1:5
+y <- seq(1, 5)
+```
+
+This creates the variable "z", which is a character vector of length 5
+
+```{r echo=TRUE}
+z <- c('ant', 'bat', 'cat', 'dog', 'eel')
+z <- c("ant", "bat", "cat", "dog", "eel")
+```
+
+## Practice (cont) {.smaller}
+
+What do you think this does?
+
+:::: {.columns}
+
+::: {.column width="50%"}
+### In R
+
+```{r echo=TRUE, eval=FALSE}
+y <- c(1, 2, 3, 4, 5)
+y[3]
+y[3:4]
+y[c(1,3,5)]
+```
+
+:::
+
+::: {.column width="50%"}
+### In Python
+
+```{python echo=TRUE, eval=FALSE}
+y = [1, 2, 3, 4, 5]
+y[3]
+y[3:4]
+y[[1,3,5]]
+```
+:::
+
+::::
+
+. . .
+
+:::: {.columns}
+
+::: {.column width="50%"}
+### In R
+
+```{r}
+y[3]
+y[3:4]
+y[c(1,3,5)]
+```
+
+:::
+
+::: {.column width="50%"}
+### In Python
+
+```{python}
+y = [1, 2, 3, 4, 5]
+y[3]
+y[3:4]
+try:
+  y[[1,3,5]]
+except TypeError as err:
+  print(err)
+```
+:::
+
+::::
+
+. . .
+
+What about this (x = `r x`)?
+
+```{r echo=TRUE, eval=FALSE}
+y[x]
+```
+
+. . .
+
+```{r}
+y[x]
+```
+
+## Practice (cont)
+
+Or this (z = `r z`)?
+
+```{r echo=TRUE, eval=FALSE}
+y[c(1,1,3,5,4,4,4,2)]
+z[c(1,1,3,5,4,4,4,2)]
+```
+
+. . .
+
+```{r}
+y[c(1,1,3,5,4,4,4,2)]
+z[c(1,1,3,5,4,4,4,2)]
+```
+
+. . .
+
+Or even
+
+```{r echo=TRUE, eval=FALSE}
+y[3:5][2]
+```
+
+. . .
+
+```{r}
+y[3:5][2]
+```
+
+## Key programming concepts
+
+- generalize
+- write functions (DRY)
+- be consistent in syntax
+- add comments for clarity
+- writing code can be experimental and is an iterative process
+
+## R resources {.smaller}
+
+type|site|link
+-----|-----|-----
+links|stackoverflow|<https://stackoverflow.com/tags/r/info>
+forum|stackoverflow|<https://stackoverflow.com/questions/tagged/r>
+forum|Rstudio community|<https://community.rstudio.com/>
+book|R for Data Science|<http://r4ds.had.co.nz/>
+book|Advanced R|<http://adv-r.had.co.nz/>
+blog|R-bloggers|<http://www.r-bloggers.com/>
+blog|RStudio blog|<https://blog.rstudio.com/>
+tutorial|Matloff's GitHub|<https://github.com/matloff/fasteR>
+
+## R documents/scripts {.smaller}
+
+: {tbl-colwidths="[20,50,30]"}
+
+term|description|do you care?
+----|----|----
+RStudio|IDE, environment for developing R code|yes
+LaTeX|typesetting language|no
+Rnw|mix of R code with LaTeX|no
+md|lightweight markup language|yes
+Rmd|mix of R code with markdown|yes
+qmd|quarto is next-gen Rmarkdown|yes
+knitr|R package that dynamically converts R chunks into structured text|yes
+pandoc|converts document format|no
+shiny|R code execution through web page|maybe
+
+## R packages
+
+An R package is a collection of code to perform some task.
+
+### Terms to know
+
+- CRAN (install.packages)
+- GitHub (devtools::install_github)
+- binary (ready for use on given OS)
+- source (must compile C/Fortran code)
+
+## Find Practice Problems
+
+- <https://www.r-exercises.com/>
+- <https://projecteuler.net/archives>
+- <https://www.kaggle.com/competitions>
+- <https://fivethirtyeight.com/tag/the-riddler/>
+
+## About directories
+
+The home area is commonly referred to with `~/`
+
+: {tbl-colwidths="[15,25,60]"}
+
++-----------+----------+-------------------------------+
+|System     |Home Area |Path                           |
++===========+==========+===============================+
+|Windows    |home<br />|C:\\Users\\username<br />      |
+|           |R home    |C:\\Users\\username\\Documents |
++-----------+----------+-------------------------------+
+|macOS      |home      |/users/username                |
++-----------+----------+-------------------------------+
+|Linux/Unix |home      |/home/username                 |
++-----------+----------+-------------------------------+
+
+Normally when we start R, the working, or, current directory will be set to our home area.
+
+## "Working" directory {.smaller}
+
+Consider the home directory for user `mctest` on a `macOS` system. Assume it has two subdirectories, "project" and "Downloads".
+
+The path to the project directory is `/users/mctest/project`, or `~/project`.
+
+From R we could set the working directory to be our project directory with `setwd('~/project')`.
+
+Our working directory has two special paths:
+
+path|description|location
+----|----|----
+.|itself|/users/mctest/project
+..|parent|/users/mctest
+
+## Absolute and relative paths
+
+If our working directory is `/users/mctest/project`, there are two ways we can access the "Downloads" directory.
+
+- absolute path: `/users/mctest/Downloads`
+- relative path: `../Downloads`
+
+What directory would be at `../../`?
+
+. . .
+
+`/users`
+
+<!--
+Rscript -e 'quarto::quarto_render("go.qmd")'
+quarto render go.qmd
+-->
