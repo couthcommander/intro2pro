@@ -356,13 +356,6 @@ An R package is a collection of code to perform some task.
 - binary (ready for use on given OS)
 - source (must compile C/Fortran code)
 
-## Find Practice Problems
-
-- <https://www.r-exercises.com/>
-- <https://projecteuler.net/archives>
-- <https://www.kaggle.com/competitions>
-- <https://fivethirtyeight.com/tag/the-riddler/>
-
 ## About directories
 
 The home area is commonly referred to with `~/`
@@ -409,6 +402,15 @@ What directory would be at `../../`?
 . . .
 
 `/users`
+
+## Find Practice Problems
+
+- <https://www.r-exercises.com/>
+- <https://projecteuler.net/archives>
+- <https://www.kaggle.com/competitions>
+- <https://fivethirtyeight.com/tag/the-riddler/>
+
+Practice makes ~~perfect~~ better cookies
 
 <!--
 Rscript -e 'quarto::quarto_render("go.qmd")'
